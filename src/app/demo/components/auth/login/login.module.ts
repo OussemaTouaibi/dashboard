@@ -1,3 +1,4 @@
+import { LayoutService } from 'src/app/layout/service/app.layout.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginRoutingModule } from './login-routing.module';
@@ -20,24 +21,4 @@ import { InputTextModule } from 'primeng/inputtext';
     ],
     declarations: [LoginComponent]
 })
-export class LoginComponent {
-  email: string;
-  password: string;
-  users = [
-    { email: 'user1@example.com', password: 'password1' },
-    { email: 'user2@example.com', password: 'password2' },
-    { email: 'user3@example.com', password: 'password3' },
-  ];
-
-  constructor(private router: Router) {}
-
-  login() {
-    const user = this.users.find((user) => user.email === this.email && user.password === this.password);
-    if (user) {
-      // Redirect to the desired page
-      this.router.navigate(['/dashboard']);
-    } else {
-      alert('Invalid email or password');
-    }
-  }
-}
+export class LoginModule { }
